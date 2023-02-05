@@ -1,0 +1,177 @@
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textpos}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\uselanguage{spanish}
+\languagepath{spanish}
+\deftranslation[to=spanish]{Example}{Ejemplo}
+\deftranslation[to=spanish]{example}{ejemplo}
+\deftranslation[to=spanish]{Examples}{Ejemplos}
+\deftranslation[to=spanish]{examples}{ejemplos}
+\mode<presentation>
+{
+  \definecolor{YellowGreen}{RGB}{204, 255, 51}
+  \definecolor{Azc}{RGB}{205,3,46}
+  \definecolor{Izt}{RGB}{87,165,25}
+  \definecolor{Xoc}{RGB}{0,114,206}
+  \definecolor{Cua}{RGB}{240,130,0}
+  \definecolor{Ler}{RGB}{173,37,168}
+  \definecolor{DimGray}{RGB}{105, 105, 105}
+  \definecolor{DarkGray}{RGB}{64, 64, 64}
+  \definecolor{LightGray}{RGB}{211,211,211}
+  \definecolor{Gold}{RGB}{255,208,00}
+  \usetheme{Antibes}
+  \usecolortheme[named=black]{structure}
+  %\useoutertheme[subsection=false]{miniframes}
+  \useoutertheme{infolines}
+  \usefonttheme{structurebold}
+  \setbeamercolor*{palette primary}{fg=white,bg=DarkGray}
+  \setbeamercolor*{palette tertiary}{fg=white,bg=teal}
+  \setbeamercolor{frametitle}{fg=DarkGray,bg=white}
+  \setbeamercolor{footlinecolor}{bg=white,fg=DarkGray}   
+  \beamertemplatenavigationsymbolsempty
+  \newcommand\mytext{Universidad Autónoma Metropolitana}
+  \newcommand*\bitem{%
+  \item[\color{Xoc}{\textbullet}]}
+  \newcommand*\aitem{%
+  \item[\color{Cua}{\textbullet}]}
+  \makeatother
+  \setbeamertemplate{footline}
+  {%
+    \leavevmode%
+    \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,
+                                 ht=2.5ex,
+                                 dp=1.125ex,
+                                 leftskip=.3cm,
+                                 rightskip=.3cm]{footlinecolor}%
+    \mytext
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,
+                           ht=2.5ex,
+                           dp=1.125ex,
+                           leftskip=.3cm,
+                           rightskip=.3cm plus1fil]{footlinecolor}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\hfill\Large\insertpagenumber
+    \end{beamercolorbox}}%
+    \vskip0pt%
+  }
+\makeatletter
+   \let\oldfootnotesize\footnotesize
+   \renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
+   %\renewcommand\mathfamilydefault{\rmdefault}
+   \setbeamercovered{transparent}
+   \setbeamertemplate{itemize item}{\color{teal}\scriptsize$\blacksquare$}
+   \setbeamertemplate{enumerate items}[square]
+   \setbeamercolor{item projected}{bg=teal,fg=white}
+   \setbeamertemplate{itemize subitem}{\color{Xoc}$\blacktriangleright$}
+   \setbeamertemplate{blocks}[rounded]
+   \newenvironment<>{DefinitionBlock}[1]{%
+      \setbeamercolor{block title}{fg=white,bg=Xoc}%
+      \begin{block}#2{#1}}{\end{block}}
+   \newenvironment<>{TheoremBlock}[1]{%
+      \setbeamercolor{block title}{fg=white,bg=teal}%
+      \begin{block}#2{#1}}{\end{block}}
+   \newenvironment<>{InformationBlock}[1]{%
+      \setbeamercolor{block title}{fg=white,bg=Ler}%
+      \begin{block}#2{#1}}{\end{block}}
+   \newenvironment<>{AlertBlock}[1]{%
+      \setbeamercolor{block title}{fg=black,bg=Gold}%
+      \begin{block}#2{#1}}{\end{block}}
+   \newenvironment<>{HighlightBlock}[1]{%
+      \setbeamercolor{block title}{fg=white,bg=Cua}%
+      \begin{block}#2{#1}}{\end{block}}
+   \newenvironment<>{CodeBlock}[1]{%
+      \setbeamercolor{block title}{fg=white,bg=black}%
+      \begin{block}#2{#1}}{\end{block}}
+   \newenvironment<>{ResultBlock}[1]{%usado para descripciones generales
+      \setbeamercolor{block title}{fg=white,bg=Izt}%
+      \begin{block}#2{#1}}{\end{block}}
+}
+
+\usepackage{listingsutf8} % Embebbed formatted code to the file
+\lstset{
+  language={Python}, 
+  numbers=left, 
+  numberstyle=\tiny\color{DimGray}, 
+  literate={`}{{\`{}}}1,
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\color{Xoc},
+  stringstyle=\color{Izt},
+  commentstyle=\color{teal}
+}
+%\lstset{basicstyle=\scriptsize\ttfamily,language=C++,keywordstyle=\color{Xoc},stringstyle=\color{Izt},}
+\usepackage{algorithm} %required to write pseudocode
+\usepackage{algpseudocode}
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\setitemize[1]{label=\color{teal}\scriptsize$\blacksquare$}
+
+\renewcommand{\lstlistingname}{Código} % Listing -> Code
+\renewcommand{\ALG@name}{Algoritmo}
+
+\newenvironment{singlecol}[1][0.5]%
+  {\begin{center}\begin{minipage}{#1\textwidth}}
+  {\end{minipage}\end{center}}
+
+\newenvironment{twocols}%
+  {
+    \newcommand{\colx}[1]{\begin{column}{0.4\textwidth} ##1 \end{column} \hfill}
+    \newcommand{\coly}[1]{\begin{column}{0.4\textwidth} ##1 \end{column}}
+    \begin{columns}
+  }%
+  {\end{columns}%
+}%
+
+\newenvironment{exercise}%
+  {
+    \newcommand{\narrowcol}[1]{\begin{column}{0.2\textwidth} ##1 \end{column} \hfill}
+    \newcommand{\widecol}[1]{\begin{column}{0.7\textwidth} ##1 \end{column}}
+    \begin{columns}
+  }%
+  {\end{columns}%
+}%
+
+\newenvironment{threecols}%
+  {
+    \newcommand{\colx}[1]{\begin{column}{0.31\textwidth} ##1 \end{column} \hfill}
+    \newcommand{\coly}[1]{\begin{column}{0.31\textwidth} ##1 \end{column} \hfill}
+    \newcommand{\colz}[1]{\begin{column}{0.31\textwidth} ##1 \end{column} }
+    \begin{columns}
+  }%
+  {\end{columns}%
+}%
+
+\newenvironment{singledef}[2][0.5]%
+  {\begin{center}\begin{minipage}{#1\textwidth} \begin{Block}{#2}}
+  {\end{Block} \end{minipage}\end{center}}
+  
+\newcommand{\insertimg}[2][]{\centering%
+  \includegraphics[width = \textwidth]{#2}\\%
+  \scriptsize#1%
+}
+
+\graphicspath{{figures/}{logo/}}
+
+\addtobeamertemplate{frametitle}{}{%
+
+\begin{textblock*}{0.1\textheight}(0.9\textwidth, -0.105\textheight)
+\includegraphics[height=0.09\textheight]{uampro}
+\end{textblock*}
+
+}
+
+\newcommand{\white}[1]{\textcolor{white}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\newcommand{\red}[1]{\textcolor{Azc}{#1}}
+\newcommand{\blue}[1]{\textcolor{Xoc}{#1}}
+\newcommand{\orange}[1]{\textcolor{Cua}{#1}}
+\newcommand{\grape}[1]{\textcolor{Ler}{#1}}
+\newcommand{\green}[1]{\textcolor{Izt}{#1}}
+\newcommand{\silver}[1]{\textcolor{LightGray}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+\newcommand{\eg}{\textit{e.g., }}
+\newcommand{\ie}{\textit{i.e., }}
