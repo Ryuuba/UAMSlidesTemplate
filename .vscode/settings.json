@@ -1,22 +1,22 @@
 {
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#ffcd33",
-        "activityBar.background": "#ffcd33",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#009f78",
+        "activityBar.activeBackground": "#ff185f",
+        "activityBar.background": "#ff185f",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#1d6000",
         "activityBarBadge.foreground": "#e7e7e7",
-        "commandCenter.border": "#15202b99",
-        "sash.hoverBorder": "#ffcd33",
-        "statusBar.background": "#ffc000",
-        "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#cc9a00",
-        "statusBarItem.remoteBackground": "#ffc000",
-        "statusBarItem.remoteForeground": "#15202b",
-        "titleBar.activeBackground": "#ffc000",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#ffc00099",
-        "titleBar.inactiveForeground": "#15202b99"
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#ff185f",
+        "statusBar.background": "#e40046",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#ff185f",
+        "statusBarItem.remoteBackground": "#e40046",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#e40046",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#e4004699",
+        "titleBar.inactiveForeground": "#e7e7e799"
     },
     "latex-workshop.hover.preview.mathjax.extensions": [
         "mathtools"
@@ -53,5 +53,7 @@
                 "%DOCFILE%"
             ]
         }
-    ]
+    ],
+    "cSpell.language": "en,es-ES",
+    "peacock.color": "#E40046"
 }
